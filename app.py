@@ -4,12 +4,22 @@ import pandas as pd
 from datetime import datetime
 #import s3fs
 
+version_date = '2022-08-17'
+__version__ = '0.0.1'
+__author_email__ = 'lcalmbach@gmail.com'
+__author__ = 'Lukas Calmbach'
+git_repo = 'https://github.com/lcalmbach/digitial-mailbox'
 saved_files = []
 s3_path = r's3://lc-opendata01/'
 local_path = './data/'
 log_file = './versand.csv'
 #fs = s3fs.S3FileSystem()
 
+APP_INFO = f"""<div style="background-color:powderblue; padding: 10px;border-radius: 15px;">
+    <small>App created by <a href="mailto:{__author_email__}">{__author__}</a><br>
+    version: {__version__} ({version_date})<br>
+    <a href="{git_repo}">git-repo</a>
+    """
 
 def get_filename(filename:str):
     fn = filename
@@ -22,6 +32,7 @@ def get_filename(filename:str):
         files_exists = exists(local_path + fn)
     return fn
 
+st.set_page_config(page_title='your_title', page_icon = '📬', layout = 'wide')
 st.markdown("### Willkommen bei der digitalen Mailbox📬")
 st.markdown("**Statistisches Amt des Kantons Basel-Stadt**")
 log_df = pd.read_csv(log_file,sep=';')
@@ -45,6 +56,7 @@ if uploaded_files and firstname and surname:
         log_df.to_csv(log_file,sep=';',index=False)
         st.success('Vielen Dank! Die Datei wurde erfolgreich gespeichert')
 
-        fs = s3fs.S3FileSystem()
-
-    
+cols = st.columns([1,5])
+with cols[0]:
+    st.markdown('')
+    st.markdown(APP_INFO, unsafe_allow_html=True)
