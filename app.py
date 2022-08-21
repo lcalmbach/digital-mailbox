@@ -2,7 +2,7 @@ import streamlit as st
 from os.path import exists
 import pandas as pd
 from datetime import datetime
-#import s3fs
+import s3fs
 
 version_date = '2022-08-17'
 __version__ = '0.0.1'
@@ -13,7 +13,7 @@ saved_files = []
 s3_path = r's3://lc-opendata01/'
 local_path = './data/'
 log_file = './versand.csv'
-#fs = s3fs.S3FileSystem()
+fs = s3fs.S3FileSystem()
 
 APP_INFO = f"""<div style="background-color:powderblue; padding: 10px;border-radius: 15px;">
     <small>App created by <a href="mailto:{__author_email__}">{__author__}</a><br>
@@ -49,9 +49,8 @@ if uploaded_files and firstname and surname:
             with open(local_path + filename, 'wb') as f: 
                 f.write(file.read()) 
             log_df.loc[len(log_df.index)] = [filename, firstname, surname, comment, datetime.now()]
-            #s3_filename = f"{s3_path}{filename}"
-            #fs.upload(local_path + filename, s3_path + filename)
-            #    f.write(file.read()) 
+            s3_filename = f"{s3_path}{filename}"
+            fs.upload(local_path + filename, s3_path + filename)
             saved_files.append(filename)
         log_df.to_csv(log_file,sep=';',index=False)
         st.success('Vielen Dank! Die Datei wurde erfolgreich gespeichert')
