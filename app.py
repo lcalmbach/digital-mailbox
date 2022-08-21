@@ -13,7 +13,7 @@ saved_files = []
 s3_path = r's3://lc-opendata01/'
 local_path = './data/'
 log_file = 'versand.csv'
-fs = s3fs.S3FileSystem()
+fs = s3fs.S3FileSystem(anon=True)
 
 APP_INFO = f"""<div style="background-color:powderblue; padding: 10px;border-radius: 15px;">
     <small>App created by <a href="mailto:{__author_email__}">{__author__}</a><br>
