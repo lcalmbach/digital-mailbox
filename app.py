@@ -4,8 +4,8 @@ import pandas as pd
 from datetime import datetime
 import s3fs
 
-version_date = '2022-08-17'
-__version__ = '0.0.1'
+version_date = '2022-08-21'
+__version__ = '0.0.2'
 __author_email__ = 'lcalmbach@gmail.com'
 __author__ = 'Lukas Calmbach'
 git_repo = 'https://github.com/lcalmbach/digitial-mailbox'
@@ -35,6 +35,7 @@ def get_filename(filename:str):
 st.set_page_config(page_title='your_title', page_icon = '📬', layout = 'wide')
 st.markdown("### Willkommen bei der digitalen Mailbox📬")
 st.markdown("**Statistisches Amt des Kantons Basel-Stadt**")
+st.write(s3_path + log_file)
 log_df = pd.read_csv(s3_path + log_file, sep=';')
 surname= st.text_input("Name")
 firstname = st.text_input("Vornamen")
@@ -48,7 +49,6 @@ if uploaded_files and firstname and surname:
             with open(local_path + filename, 'wb') as f: 
                 f.write(file.read()) 
             log_df.loc[len(log_df.index)] = [filename, firstname, surname, comment, datetime.now()]
-            s3_filename = f"{s3_path}{filename}"
             fs.upload(local_path + filename, s3_path + filename)
             saved_files.append(filename)
         log_df.to_csv(s3_path + log_file,sep=';',index=False)
