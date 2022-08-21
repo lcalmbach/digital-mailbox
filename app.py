@@ -12,7 +12,7 @@ git_repo = 'https://github.com/lcalmbach/digitial-mailbox'
 saved_files = []
 s3_path = r's3://lc-opendata01/'
 local_path = './data/'
-log_file = './versand.csv'
+log_file = 'versand.csv'
 fs = s3fs.S3FileSystem()
 
 APP_INFO = f"""<div style="background-color:powderblue; padding: 10px;border-radius: 15px;">
@@ -35,12 +35,11 @@ def get_filename(filename:str):
 st.set_page_config(page_title='your_title', page_icon = '📬', layout = 'wide')
 st.markdown("### Willkommen bei der digitalen Mailbox📬")
 st.markdown("**Statistisches Amt des Kantons Basel-Stadt**")
-log_df = pd.read_csv(log_file,sep=';')
+log_df = pd.read_csv(s3_path + log_file, sep=';')
 surname= st.text_input("Name")
 firstname = st.text_input("Vornamen")
 comment = st.text_area("Kommentar", help="Hier können sie bei Bedarf Bemerkungen zu ihrem Dateiversand deponieren")
 uploaded_files = st.file_uploader(f"Ziehen sie bitte ihre Dateien in die Upload-Fläche", accept_multiple_files=True, type=['xlsx'])
-#s3 = s3fs.S3FileSystem(anon=False)
 
 if uploaded_files and firstname and surname:
     if st.button("Dateien senden"):
@@ -52,7 +51,7 @@ if uploaded_files and firstname and surname:
             s3_filename = f"{s3_path}{filename}"
             fs.upload(local_path + filename, s3_path + filename)
             saved_files.append(filename)
-        log_df.to_csv(log_file,sep=';',index=False)
+        log_df.to_csv(s3_path + log_file,sep=';',index=False)
         st.success('Vielen Dank! Die Datei wurde erfolgreich gespeichert')
 
 cols = st.columns([1,5])
