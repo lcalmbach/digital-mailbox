@@ -3,6 +3,7 @@ from os.path import exists
 import pandas as pd
 from datetime import datetime
 import s3fs
+import os
 
 version_date = '2022-08-21'
 __version__ = '0.0.3'
@@ -10,17 +11,19 @@ __author_email__ = 'lcalmbach@gmail.com'
 __author__ = 'Lukas Calmbach'
 git_repo = 'https://github.com/lcalmbach/digitial-mailbox'
 saved_files = []
+s3_bucket = os.environ.get('AWS_STORAGE_BUCKET_NAME')
 s3_path = r's3://lc-opendata01/'
 local_path = './data/'
 log_file_remote = 'https://lc-opendata01.s3.amazonaws.com/versand.csv'
 log_file_local = 'versand.csv'
-fs = s3fs.S3FileSystem()
 
 APP_INFO = f"""<div style="background-color:powderblue; padding: 10px;border-radius: 15px;">
     <small>App created by <a href="mailto:{__author_email__}">{__author__}</a><br>
     version: {__version__} ({version_date})<br>
     <a href="{git_repo}">git-repo</a>
     """
+
+
 
 def get_filename(filename:str):
     fn = filename
@@ -33,12 +36,17 @@ def get_filename(filename:str):
         files_exists = exists(local_path + fn)
     return fn
 
+def get_fs():
+    access_key = os.environ.get('AWS_ACCESS_KEY_ID')
+    secret_key = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    fs = s3fs.S3FileSystem(anon=False, key=access_key, secret=secret_key)
+    return fs
 
 st.set_page_config(page_title='your_title', page_icon = '📬', layout = 'wide')
+fs = get_fs()
 st.markdown("### Willkommen bei der digitalen Mailbox📬")
 st.markdown("**Statistisches Amt des Kantons Basel-Stadt**")
 log_df = pd.read_csv(log_file_remote, sep=';')
-st.write(log_df)
 surname= st.text_input("Name")
 firstname = st.text_input("Vornamen")
 comment = st.text_area("Kommentar", help="Hier können sie bei Bedarf Bemerkungen zu ihrem Dateiversand deponieren")
