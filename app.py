@@ -5,8 +5,10 @@ from datetime import datetime
 import s3fs
 import os
 
-version_date = '2022-08-21'
-__version__ = '0.0.3'
+from tools import randomword
+
+version_date = '2023-27-02'
+__version__ = '0.0.4'
 __author_email__ = 'lcalmbach@gmail.com'
 __author__ = 'Lukas Calmbach'
 git_repo = 'https://github.com/lcalmbach/digitial-mailbox'
@@ -22,8 +24,8 @@ APP_INFO = f"""<div style="background-color:powderblue; padding: 10px;border-rad
     version: {__version__} ({version_date})<br>
     <a href="{git_repo}">git-repo</a>
     """
-
-
+MAIL_LISTE_DATEI = './mail-liste.csv'
+CODE_LEN = 20
 
 def get_filename(filename:str):
     fn = filename
@@ -42,23 +44,44 @@ def get_fs():
     fs = s3fs.S3FileSystem(anon=False, key=access_key, secret=secret_key)
     return fs
 
+def init_mail_verteiler():
+    df = pd.read_csv(MAIL_LISTE_DATEI, sep=';')
+    for index,row in df.iterrows():
+        df['code'] = randomword(CODE_LEN)
+    df.to_csv('./mail-liste.csv', index=False, sep=';')
+
+def send_invitation():
+    pass
+
+def verify_code(code):
+    df = pd.read_csv(MAIL_LISTE_DATEI, sep = ';')
+    df = df[df['code'] == code]
+    if len(df) > 0:
+        return dict(df.iloc[0])
+    else:
+        st.warning("Der Code ist nicht korrekt, bitte copy/paste den Code aus der Mail Einladung oder kontaktieren sie stata@bs.ch für einen neuen Code.")
+
 st.set_page_config(page_title='your_title', page_icon = '📬', layout = 'wide')
 fs = get_fs()
 st.markdown("### Willkommen bei der digitalen Mailbox📬")
 st.markdown("**Statistisches Amt des Kantons Basel-Stadt**")
 log_df = pd.read_csv(log_file_remote, sep=';')
-surname= st.text_input("Name")
-firstname = st.text_input("Vornamen")
-comment = st.text_area("Kommentar", help="Hier können sie bei Bedarf Bemerkungen zu ihrem Dateiversand deponieren")
-uploaded_files = st.file_uploader(f"Ziehen sie bitte ihre Dateien in die Upload-Fläche", accept_multiple_files=True, type=['xlsx'])
+code= st.text_input(f"{CODE_LEN}-stelliger alphanumerischer Code (bitte aus Einladungsmail copy/pasten)")
+if len(code) == CODE_LEN:
+    sender = verify_code(code)
+else:
+    sender = False
+if sender:
+    st.info(f"Willkommen {sender['vorname']}! Du kannst bei Bedarf einen Kommentar erfassen und anschliessend deine Datei in das Datei-Upload Feld ziehen.")
+    comment = st.text_area("Kommentar", help="Hier können sie bei Bedarf Bemerkungen zu ihrem Dateiversand deponieren")
+    uploaded_files = st.file_uploader(f"Ziehen sie bitte ihre Dateien in die Upload-Fläche", accept_multiple_files=True, type=['xlsx'])
 
-if uploaded_files and firstname and surname:
     if st.button("Dateien senden"):
         for file in uploaded_files:
             filename = get_filename(file.name)
             with open(local_path + filename, 'wb') as f: 
                 f.write(file.read()) 
-            log_df.loc[len(log_df.index)] = [filename, firstname, surname, comment, datetime.now()]
+            log_df.loc[len(log_df.index)] = [filename, sender['name'], sender['vorname'], comment, datetime.now()]
             fs.upload(local_path + filename, s3_path + filename)
             saved_files.append(filename)
         log_df.to_csv(log_file_local,sep=';',index=False)
