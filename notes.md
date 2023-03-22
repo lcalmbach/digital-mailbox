@@ -1,1 +1,0 @@
-heroku addons:create bucketeer:hobbyist --app digital-mailbox
