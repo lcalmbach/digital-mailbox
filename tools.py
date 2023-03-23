@@ -5,7 +5,7 @@ import smtplib
 import socket
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-import configparser
+import os
 
 DEV_MACHINES = ['liestal']
 CONFIG_FILE = "config.cfg"
@@ -28,9 +28,7 @@ def send_mail(mail):
         smtp.send_message(message)
 
 def get_config_value(key: str) -> str:
-    cfg = configparser.ConfigParser()
-    cfg.read(CONFIG_FILE)
     if socket.gethostname().lower() in DEV_MACHINES:
-        return cfg['default'][key]
+        return os.environ.get('MAIL_PASSWORD')
     else:
         return st.secrets[key]

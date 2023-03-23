@@ -81,9 +81,9 @@ def main():
     st.markdown("**Statistisches Amt des Kantons Basel-Stadt**")
     log_df = pd.read_csv(log_file_remote, sep=';')
     code= st.text_input(f"{CODE_LEN}-stelliger alphanumerischer Code (bitte aus Einladungsmail copy/pasten)")
-    sender = verify_code(code)
+    sender = verify_code(code) if code else False
     if sender:
-        st.info(f"Willkommen {sender['vorname']}! Du kannst bei Bedarf einen Kommentar erfassen und anschliessend deine Datei in das Datei-Upload Feld ziehen.")
+        st.info(f"Willkommen {sender['vorname']}! Sie können bei Bedarf einen Kommentar erfassen, die Datei in das Datei-Upload Feld ziehen und anschliessend die [Datei senden] Schaltfläche drücken.")
         comment = st.text_area("Kommentar", help="Hier können sie bei Bedarf Bemerkungen zu ihrem Dateiversand deponieren")
         uploaded_files = st.file_uploader(f"Ziehen sie bitte ihre Dateien in die Upload-Fläche", accept_multiple_files=True, type=['xlsx'])
 

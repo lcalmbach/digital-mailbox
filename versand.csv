@@ -1,30 +1,38 @@
-filename;surname;firstname;comment;time; status; status_who; status_timestamp
-lc_test_8.xlsx;Müller;Heinz ;alle Daten sind eigenltich falsch;2022-08-13 08:08:01.151280; gelesen;ssscal;2022-08-13 08:08:01.151280
-lc_test_9.xlsx;Müller;Heinz ;alle Daten sind eigenltich falsch;2022-08-13 08:10:09.330640; gelesen;ssscal;2022-08-13 08:08:01.151280 
-lc_test_10.xlsx;Tester;Heinz ;;2022-08-13 08:10:34.491246; gelesen;ssscal;2022-08-13 08:08:01.151280
-lc_test.xlsx;Müller;Heinz ;;2022-08-13 08:14:30.167276; gelesen;ssscal;2022-08-13 08:08:01.151280
-lc_test_1.xlsx;Tester;Heinz;;2022-08-13 08:33:26.862768; gelesen;ssscal;2022-08-13 08:08:01.151280
-Mitgliederliste.xlsx;Mustermann;HAns;blau rot grün;2022-08-16 07:14:43.189486; gelesen;ssscal;2022-08-13 08:08:01.151280
-use_cases.xlsx;test;test;;2022-08-21 16:21:49.754429; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template - 2 plots by 2 parameters.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:31:21.050083; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template - 2 plots by 2 parameters_1.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:38:54.637913; gelesen;ssscal;2022-08-13 08:08:01.151280
-Stations.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:38:55.321949; gelesen;ssscal;2022-08-13 08:08:01.151280
-readTest.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:40:34.620498; gelesen;ssscal;2022-08-13 08:08:01.151280
-xyz.xlsx;eeee;asdf;eeeeeeeeeeeeeeeeeeeeeeeeeee;2022-08-22 06:34:00.633319; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart.xlsx;asdfasdf;asdf;dfasdfes;2022-08-22 07:43:38.609126; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart_1.xlsx;Kissinger;Henry;bin am testen;2022-08-22 05:48:10.207347; gelesen;ssscal;2022-08-13 08:08:01.151280
-t14-1-01 (2).xlsx;Doe;Jane;I was here;2022-08-22 11:03:36.011098; gelesen;ssscal;2022-08-13 08:08:01.151280
-Mitgliederliste.xlsx;Doe;John;all is good;2022-08-24 19:25:35.755587; gelesen;ssscal;2022-08-13 08:08:01.151280
-use-cases.xlsx;Müller;Heinz;testen;2022-08-25 09:39:01.813179; gelesen;ssscal;2022-08-13 08:08:01.151280
-zeiterfassung_20220829.xlsx;Muster;Hans;hallo velo;2022-08-30 09:23:19.043736; gelesen;ssscal;2022-08-13 08:08:01.151280
-Finanzen.xlsx;Calmbach;Lukas;;2023-02-27 17:08:43.382499; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart_1.xlsx;Calmbach;Lukas;;2023-02-28 06:24:51.006854; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart_6.xlsx;Lukas;Lukas;;2023-02-28 07:31:19.055105; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart_7.xlsx;Lukas;Lukas;;2023-02-28 07:31:50.953176; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart_8.xlsx;Lukas;Lukas;;2023-02-28 07:32:17.206568; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart_9.xlsx;Lukas;Lukas;;2023-02-28 07:32:59.894150; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart_10.xlsx;Lukas;Lukas;;2023-02-28 07:35:13.817300; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart_11.xlsx;Lukas;Lukas;;2023-02-28 07:35:43.642870; gelesen;ssscal;2022-08-13 08:08:01.151280
-Template-Chart_12.xlsx;Lukas;Lukas;;2023-02-28 07:36:14.197945; gelesen;ssscal;2022-08-13 08:08:01.151280
-canvas-basics.xlsx;Calmbach;Lukas;;2023-03-22 05:20:22.996390; gelesen;ssscal;2022-08-13 08:08:01.151280
+filename;surname;firstname;comment;time;status;status_who;status_timestamp
+lc_test_8.xlsx;Müller;Heinz ;alle Daten sind eigenltich falsch;2022-08-13 08:08:01.151280;gelesen;ssscal;2022-08-13 08:08:01.151280
+lc_test_9.xlsx;Müller;Heinz ;alle Daten sind eigenltich falsch;2022-08-13 08:10:09.330640;gelesen;ssscal;2022-08-13 08:08:01.151280 
+lc_test_10.xlsx;Tester;Heinz ;;2022-08-13 08:10:34.491246;gelesen;ssscal;2022-08-13 08:08:01.151280
+lc_test.xlsx;Müller;Heinz ;;2022-08-13 08:14:30.167276;gelesen;ssscal;2022-08-13 08:08:01.151280
+lc_test_1.xlsx;Tester;Heinz;;2022-08-13 08:33:26.862768;gelesen;ssscal;2022-08-13 08:08:01.151280
+Mitgliederliste.xlsx;Mustermann;HAns;blau rot grün;2022-08-16 07:14:43.189486;gelesen;ssscal;2022-08-13 08:08:01.151280
+use_cases.xlsx;test;test;;2022-08-21 16:21:49.754429;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template - 2 plots by 2 parameters.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:31:21.050083;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template - 2 plots by 2 parameters_1.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:38:54.637913;gelesen;ssscal;2022-08-13 08:08:01.151280
+Stations.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:38:55.321949;gelesen;ssscal;2022-08-13 08:08:01.151280
+readTest.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:40:34.620498;gelesen;ssscal;2022-08-13 08:08:01.151280
+xyz.xlsx;eeee;asdf;eeeeeeeeeeeeeeeeeeeeeeeeeee;2022-08-22 06:34:00.633319;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart.xlsx;asdfasdf;asdf;dfasdfes;2022-08-22 07:43:38.609126;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart_1.xlsx;Kissinger;Henry;bin am testen;2022-08-22 05:48:10.207347;gelesen;ssscal;2022-08-13 08:08:01.151280
+t14-1-01 (2).xlsx;Doe;Jane;I was here;2022-08-22 11:03:36.011098;gelesen;ssscal;2022-08-13 08:08:01.151280
+Mitgliederliste.xlsx;Doe;John;all is good;2022-08-24 19:25:35.755587;gelesen;ssscal;2022-08-13 08:08:01.151280
+use-cases.xlsx;Müller;Heinz;testen;2022-08-25 09:39:01.813179;gelesen;ssscal;2022-08-13 08:08:01.151280
+zeiterfassung_20220829.xlsx;Muster;Hans;hallo velo;2022-08-30 09:23:19.043736;gelesen;ssscal;2022-08-13 08:08:01.151280
+Finanzen.xlsx;Calmbach;Lukas;;2023-02-27 17:08:43.382499;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart_1.xlsx;Calmbach;Lukas;;2023-02-28 06:24:51.006854;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart_6.xlsx;Lukas;Lukas;;2023-02-28 07:31:19.055105;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart_7.xlsx;Lukas;Lukas;;2023-02-28 07:31:50.953176;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart_8.xlsx;Lukas;Lukas;;2023-02-28 07:32:17.206568;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart_9.xlsx;Lukas;Lukas;;2023-02-28 07:32:59.894150;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart_10.xlsx;Lukas;Lukas;;2023-02-28 07:35:13.817300;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart_11.xlsx;Lukas;Lukas;;2023-02-28 07:35:43.642870;gelesen;ssscal;2022-08-13 08:08:01.151280
+Template-Chart_12.xlsx;Lukas;Lukas;;2023-02-28 07:36:14.197945;gelesen;ssscal;2022-08-13 08:08:01.151280
+canvas-basics.xlsx;Calmbach;Lukas;;2023-03-22 05:20:22.996390;gelesen;ssscal;2022-08-13 08:08:01.151280
 canvas-basics.xlsx;Lukas;Lukas;;2023-03-22 07:08:54.318620;ungelesen;;
+test.xlsx;Lukas;Lukas;dies ist ein Testversand;2023-03-23 05:54:45.658706;ungelesen;;
+test.xlsx;Lukas;Lukas;test mich;2023-03-23 07:01:54.379630;ungelesen;;
+test_1.xlsx;Lukas;Lukas;test mich;2023-03-23 07:06:29.113578;ungelesen;;
+test_2.xlsx;Lukas;Lukas;test mich;2023-03-23 07:06:48.988070;ungelesen;;
+test_3.xlsx;Lukas;Lukas;test mich;2023-03-23 07:07:18.298892;ungelesen;;
+test_4.xlsx;Lukas;Lukas;test mich;2023-03-23 07:10:26.678160;ungelesen;;
+test_5.xlsx;Lukas;Lukas;test;2023-03-23 07:11:39.488323;ungelesen;;
+test_6.xlsx;Lukas;Lukas;test;2023-03-23 07:14:02.320624;ungelesen;;

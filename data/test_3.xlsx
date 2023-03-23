@@ -1,0 +1,32 @@
+filename;surname;firstname;comment;time
+lc_test_8.xlsx;Müller;Heinz ;alle Daten sind eigenltich falsch;2022-08-13 08:08:01.151280
+lc_test_9.xlsx;Müller;Heinz ;alle Daten sind eigenltich falsch;2022-08-13 08:10:09.330640
+lc_test_10.xlsx;Tester;Heinz ;;2022-08-13 08:10:34.491246
+lc_test.xlsx;Müller;Heinz ;;2022-08-13 08:14:30.167276
+lc_test_1.xlsx;Tester;Heinz;;2022-08-13 08:33:26.862768
+Mitgliederliste.xlsx;Mustermann;HAns;blau rot grün;2022-08-16 07:14:43.189486
+use_cases.xlsx;test;test;;2022-08-21 16:21:49.754429
+Template - 2 plots by 2 parameters.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:31:21.050083
+Template - 2 plots by 2 parameters_1.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:38:54.637913
+Stations.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:38:55.321949
+readTest.xlsx;asdg;dsagasdg;asdgasdgfasdg;2022-08-21 16:40:34.620498
+xyz.xlsx;eeee;asdf;eeeeeeeeeeeeeeeeeeeeeeeeeee;2022-08-22 06:34:00.633319
+Template-Chart.xlsx;asdfasdf;asdf;dfasdfes;2022-08-22 07:43:38.609126
+Template-Chart_1.xlsx;Kissinger;Henry;bin am testen;2022-08-22 05:48:10.207347
+t14-1-01 (2).xlsx;Doe;Jane;I was here;2022-08-22 11:03:36.011098
+Mitgliederliste.xlsx;Doe;John;all is good;2022-08-24 19:25:35.755587
+use-cases.xlsx;Müller;Heinz;testen;2022-08-25 09:39:01.813179
+zeiterfassung_20220829.xlsx;Muster;Hans;hallo velo;2022-08-30 09:23:19.043736
+Finanzen.xlsx;Calmbach;Lukas;;2023-02-27 17:08:43.382499
+Template-Chart_1.xlsx;Calmbach;Lukas;;2023-02-28 06:24:51.006854
+Template-Chart_6.xlsx;Lukas;Lukas;;2023-02-28 07:31:19.055105
+Template-Chart_7.xlsx;Lukas;Lukas;;2023-02-28 07:31:50.953176
+Template-Chart_8.xlsx;Lukas;Lukas;;2023-02-28 07:32:17.206568
+Template-Chart_9.xlsx;Lukas;Lukas;;2023-02-28 07:32:59.894150
+Template-Chart_10.xlsx;Lukas;Lukas;;2023-02-28 07:35:13.817300
+Template-Chart_11.xlsx;Lukas;Lukas;;2023-02-28 07:35:43.642870
+Template-Chart_12.xlsx;Lukas;Lukas;;2023-02-28 07:36:14.197945
+Anfrage_KStE_F&F_Sozialhile.xlsx;Calmbach;Lukas;"Hallo Velo!
+
+Kann man auch xls hochladbar machen?";2023-03-07 08:01:27.973037
+canvas-basics.xlsx;Calmbach;Lukas;;2023-03-22 05:20:22.996390
